@@ -15,17 +15,19 @@ h2 {
 }
 
 article {
+    display: flex;
+    background: #D3E5F0;
+    border: 1px solid #fdfdfd23;
+    border-radius: 25px;
     box-sizing: border-box;
-    width: 400px;
+    box-shadow:  10px 10px 19px #97c7e594,
+                -10px -10px 19px #f3ffffbb;
+    flex-direction: column;
+    justify-content: space-between;
     max-width: 90vw;
     margin: 25px auto;
     padding: 25px 35px;
-    border: 1px solid #fdfdfd23;
-    border-radius: 25px;
-    background: #D3E5F0;
-    box-shadow:  10px 10px 19px #97c7e594,
-                -10px -10px 19px #f3ffffbb;
-
+    width: 400px;
 }
 
 .article {
@@ -42,11 +44,12 @@ article {
         padding: 35px 0;
     }
     &_content {
-        padding: 25px;
         border-radius: 25px;
         background: #D3E5F0;
         box-shadow: inset 10px 10px 19px #97c7e594,
                 inset -10px -10px 19px #f3ffffbb;
+        flex-grow: 1;
+        padding: 25px;
 
         &-video {
             display: flex;
@@ -92,12 +95,27 @@ article {
         color: #315B69;
         box-shadow:  10px 10px 19px #97c7e594,
                     -10px -10px 19px #f3ffffbb;
+
+        &--borderless {
+            margin-bottom: 25px;
+        }
     }
     &_icon {
         position: absolute;
         top: 10px;
         left: 0;
     }
+}
+
+.section {
+    &-row {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+i:not(.article_icon) {
+    color: #9BB7D0;
 }
 
 table {
@@ -114,40 +132,26 @@ table {
             font-weight: bold;
         }
     }
-
-    .chart {
-        &_container {
-            display: flex;
-            height: 16px;
-            width: 100%;
-            padding: 4px;
-            border-radius: 25px;
-            background: #D3E5F0;
-            box-shadow: inset 10px 10px 19px #97c7e594,
-                    inset -10px -10px 19px #f3ffffbb;
-        }
-        &_bar {
-            background: linear-gradient(50deg, #F5CA7C, #F7A078);
-            height: 100%;
-            width: 45%;
-            border-radius: 25px;
-        }
-    }
 }
 
 
 .button {
-    cursor: pointer;
-    font-weight: bold;
-    color: #315B69;
     background: #D3E5F0;
     border: 1px solid #fdfdfd23;
     box-shadow: 10px 10px 19px #97c7e594,
                 -10px -10px 19px #f3ffffbb;
+    color: #315B69;
+    cursor: pointer;
+    font-weight: bold;
     &:active {
         box-shadow: 10px 10px 19px #97c7e594,
                     -10px -10px 19px #f3ffffbb,
                     inset 5px 5px 12px #97c7e594,
+                    inset -5px -5px 12px #f3ffffbb;
+    }
+    &.active {
+        cursor: auto;
+        box-shadow: inset 5px 5px 12px #97c7e594,
                     inset -5px -5px 12px #f3ffffbb;
     }
 
@@ -159,9 +163,83 @@ table {
     }
     &--square {
         @extend .button;
+        border-radius: 8px;
         height: 40px;
-        width: 40px;
-        border-radius: 8px;  
+        position: relative;
+        width: 40px;  
+
+        i {
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.h-chart {
+    &_container {
+        display: flex;
+        height: 16px;
+        width: 100%;
+        padding: 4px;
+        border-radius: 25px;
+        background: #D3E5F0;
+        box-shadow: inset 10px 10px 19px #97c7e594,
+                inset -10px -10px 19px #f3ffffbb;
+    }
+    &_bar {
+        background: linear-gradient(50deg, #F5CA7C, #F7A078);
+        height: 100%;
+        width: 45%;
+        border-radius: 25px;
+    }
+}
+
+.v-chart {
+    &_container {
+        align-items: flex-end;
+        border-radius: 25px;
+        background: #D3E5F0;
+        box-shadow: inset 10px 10px 19px #97c7e594,
+                inset -10px -10px 19px #f3ffffbb;
+        display: flex;
+        min-height: 100px;
+        min-width: 30px;
+        padding: 4px;
+        
+
+        &--empty {
+            @extend .v-chart_container;
+            box-shadow: 10px 10px 19px #97c7e594,
+                        -10px -10px 19px #f3ffffbb;
+        }
+    }
+    &_bar {
+        border-radius: 25px;
+        width: 100%;
+
+        &--60 {
+            @extend .v-chart_bar;
+            height: 60px;
+        }
+        &--85 {
+            @extend .v-chart_bar;
+            height: 85%;
+        }
+
+        &--blue {
+            background: linear-gradient(#69B4F5, #56D0D9);
+            box-shadow: 0px 0px 25px 2px #56D0D9;
+        }
+        &--orange {
+            background: linear-gradient(#F5CA7C, #F7A078);
+            box-shadow: 0px 0px 25px 2px #F5CA7C;
+        }
+        &--pink {
+            background: linear-gradient(#FC8DAB, #F870E1);
+            box-shadow: 0px 0px 25px 2px #FC8DAB;
+        }
     }
 }
 
