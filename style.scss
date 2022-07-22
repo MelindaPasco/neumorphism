@@ -177,6 +177,41 @@ table {
     }
 }
 
+.c-chart {
+    border-radius: 50%;
+    box-shadow: 10px 10px 19px #97c7e594,
+                    -10px -10px 19px #f3ffffbb;
+    height: 154px;
+    margin: 0 auto;
+    position: relative;
+    width: 154px;
+
+    .c-chart_foreground {
+        stroke-linecap: round;
+        stroke-dasharray: 350;
+        stroke-dashoffset: 118;
+        transform-origin: 50% 50%;
+        transform: rotate(-90deg);
+        filter: drop-shadow(0px 0px 7px #9A5ECE);
+    }
+    svg {
+        height: 154px;
+        position: relative;
+        padding: 7px;
+        width: 154px;
+    }
+    figcaption {
+        border-radius: 50%;
+        box-shadow: 10px 10px 19px #97c7e594,
+                    -10px -10px 19px #f3ffffbb;
+        color: #9BB7D0;
+        left: 50%;
+        padding: 18px 10px;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
 .h-chart {
     &_container {
         display: flex;
@@ -195,7 +230,6 @@ table {
         border-radius: 25px;
     }
 }
-
 .v-chart {
     &_container {
         align-items: flex-end;
@@ -240,6 +274,52 @@ table {
             background: linear-gradient(#FC8DAB, #F870E1);
             box-shadow: 0px 0px 25px 2px #FC8DAB;
         }
+    }
+}
+
+.toggle {
+    display: inline-block;
+    height: 38px;
+    position: relative;
+    width: 76px;
+
+    input { 
+        height: 0;
+        opacity: 0;
+        width: 0;
+
+        &:checked + .toggle_slider:before {
+            -webkit-transform: translateX(38px);
+            -ms-transform: translateX(38px);
+            transform: translateX(38px);
+        }
+    }
+
+    &_slider {
+        background-color: #97c7e57e;
+        border-radius: 10px;
+        bottom: 0;
+        box-shadow: inset 8px 6px 5px #97c7e594;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: .4s;
+        -webkit-transition: .4s;
+
+        &:before {
+            position: absolute;
+            border-radius: 8px;
+            content: "";
+            height: 30px;
+            width: 30px;
+            left: 4px;
+            bottom: 4px;
+            background: #D3E5F0;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }          
     }
 }
 

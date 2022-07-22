@@ -98,12 +98,27 @@
                 <h2>At vero eos</h2>
             </div>
             
-            <button class="button--pill">Et accusamus</button>
+            <label class="toggle">
+                <input type="checkbox">
+                <span class="toggle_slider"></span>
+            </label>
         </div>
 
-        <div class="article_content">
-            <p>Under construction</p>
-        </div>
+        <figure class="c-chart">
+            <svg role="img">
+                <title>[title]</title>
+                <desc>[description]</desc>
+                <defs>
+                    <linearGradient id="c-chart_gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#727BE4" />
+                      <stop offset="100%" stop-color="#9A5ECE" />
+                    </linearGradient>
+                </defs>
+                <circle class="c-chart_background" cx="70" cy="70" r="53" stroke="#97c7e5" stroke-width="20" opacity="0.5" fill="none" />
+                <circle class="c-chart_foreground" cx="83" cy="70" r="53" stroke="url(#c-chart_gradient)" stroke-width="12" opacity="0.8" fill="none" />
+            </svg>
+            <figcaption>73%</figcaption>
+        </figure>
 
         <section class="article_section--borderless"></section>
 
