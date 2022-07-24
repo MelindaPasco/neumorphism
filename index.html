@@ -30,7 +30,7 @@
             <button class="button--pill">Dolor sit</button>
         </div>
 
-        <section class="article_section">
+        <div class="article_container">
             <table>
                 <tr>
                     <td>Consectetur</td>
@@ -43,13 +43,16 @@
                 <tr>
                     <td>Elit sed do</td>
                     <td>
-                        <div class="h-chart_container">
-                            <div class="h-chart_bar"></div>
-                        </div>
+                        <figure title="horizontal gauge">
+                            <div class="h-chart_container">
+                                <div class="h-chart_bar"></div>
+                            </div>
+                            
+                        </figure>
                     </td>
                 </tr>
             </table>
-        </section>
+        </div>
 
         <div class="article_content">
             <div class="article_content-video">
@@ -104,41 +107,41 @@
             </label>
         </div>
 
-        <figure class="c-chart">
-            <svg role="img">
-                <title>[title]</title>
-                <desc>[description]</desc>
-                <defs>
-                    <linearGradient id="c-chart_gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stop-color="#727BE4" />
-                      <stop offset="100%" stop-color="#9A5ECE" />
-                    </linearGradient>
-                </defs>
-                <circle class="c-chart_background" cx="70" cy="70" r="53" stroke="#97c7e5" stroke-width="20" opacity="0.5" fill="none" />
-                <circle class="c-chart_foreground" cx="83" cy="70" r="53" stroke="url(#c-chart_gradient)" stroke-width="12" opacity="0.8" fill="none" />
-            </svg>
-            <figcaption>73%</figcaption>
-        </figure>
+        <div class="article_container--borderless">
+            <figure class="c-chart" title="circle chart">
+                <svg role="img">
+                    <defs>
+                        <linearGradient id="c-chart_gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stop-color="#727BE4" />
+                          <stop offset="100%" stop-color="#9A5ECE" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="c-chart_background" cx="70" cy="70" r="53" stroke="#97c7e5" stroke-width="20" opacity="0.5" fill="none" />
+                    <circle class="c-chart_foreground" cx="83" cy="70" r="53" stroke="url(#c-chart_gradient)" stroke-width="12" opacity="0.8" fill="none" />
+                </svg>
+                <figcaption>73%</figcaption>
+            </figure>
+        </div>
 
-        <section class="article_section--borderless"></section>
-
-        <section class="article_section--borderless">
-            <div class="section-row">
-                <div class="v-chart_container">
-                    <div class="v-chart_bar--60 v-chart_bar--blue"></div>
+        <div class="article_container--borderless">
+            <figure>
+                <div class="row">
+                    <div class="v-chart_container">
+                        <div class="v-chart_bar--60 v-chart_bar--blue"></div>
+                    </div>
+                    <div class="v-chart_container--empty"></div>
+                    <div class="v-chart_container">
+                        <div class="v-chart_bar--85 v-chart_bar--orange"></div>
+                    </div>
+                    <div class="v-chart_container">
+                        <div class="v-chart_bar--60 v-chart_bar--pink"></div>
+                    </div>
                 </div>
-                <div class="v-chart_container--empty"></div>
-                <div class="v-chart_container">
-                    <div class="v-chart_bar--85 v-chart_bar--orange"></div>
-                </div>
-                <div class="v-chart_container">
-                    <div class="v-chart_bar--60 v-chart_bar--pink"></div>
-                </div>
-            </div>
-        </section>
+            </figure>
+        </div>
 
         <footer class="article_footer">
-            <div class="section-row">
+            <div class="row">
                 <div class="button--square">
                     <i class="fa fa-home" aria-hidden="true"></i>
                 </div>
@@ -156,7 +159,7 @@
     <article>
         <div class="article_header">
             <i class="article_icon fa fa-paperclip fa-xl" aria-hidden="true"></i>
-            <h1>ET IUSTO</h1>
+            <h1>BUTTONS</h1>
         </div>
 
         <div class="article_title">
@@ -167,8 +170,56 @@
             <button class="button--pill">Dignissimos</button>
         </div>
 
-        <div class="article_content">
-            <p>Under construction</p>
+        <div class="article_container--borderless">
+            <div class="row">
+                <button class="button--round active">
+                    <div class="button_inner-wrap theme--blue">
+                        <div class="button_inner-content theme--blue">
+                            <span>ON</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="button--round active">
+                    <div class="button_inner-wrap theme--red">
+                        <div class="button_inner-content theme--red">
+                            <i class="fa fa-power-off" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="button--round active">
+                    <div class="button_inner-wrap theme--blue">
+                        <div class="button_inner-content theme--blue">
+                            <i class="fa fa-play" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </button>
+                
+            </div>
+            <div class="row">
+                <button class="button--round">
+                    <div class="button_inner-wrap">
+                        <div class="button_inner-content">OFF</div>
+                    </div>
+                </button>
+
+                <button class="button--round">
+                    <div class="button_inner-wrap theme--red">
+                        <div class="button_inner-content theme--red">
+                            <i class="fa fa-power-off" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="button--round">
+                    <div class="button_inner-wrap theme--blue">
+                        <div class="button_inner-content theme--blue">
+                            <i class="fa fa-pause" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </button>
+            </div>
         </div>
     </article>
  
